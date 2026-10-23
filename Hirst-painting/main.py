@@ -1,10 +1,27 @@
-###This code will not work in repl.it as there is no access to the colorgram package here.###
-##We talk about this in the video tutorials##
-import colorgram
+import turtle as turtle_module
+import random
 
-rgb_colors = []
-colors = colorgram.extract('image.jpg', 30)
-for color in colors:
-    rgb_colors.append(color.rgb)
+turtle_module.colormode(255)
+tim = turtle_module.Turtle()
+tim.speed("fastest")
+tim.penup()
+tim.hideturtle()
+color_list =  [(250, 164, 189), (238, 248, 245), (150, 75, 49), (233, 201, 135), (52, 93, 124), (172, 154, 48), (148, 38, 19)]
 
-print(rgb_colors)
+tim.setheading(225)
+tim.forward(300)
+tim.setheading(0)
+number_of_dots = 101
+
+for dot_count in range (1, number_of_dots + 1):
+   tim.dot(20, random.choice(color_list))
+   tim.forward(50)
+
+
+   if dot_count % 10 == 0:
+     tim.setheading(90)
+     tim.forward(50)
+     tim.setheading(180)
+     tim.forward(500)
+     tim.setheading(0)
+
